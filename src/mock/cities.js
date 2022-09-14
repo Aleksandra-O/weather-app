@@ -41,6 +41,26 @@ const cities = [
     },
     "photo": "https://img5.socratify.net/0c51d045dcf13fab2d_600x375.jpg"
   },
+  {
+    "timezone":	"Europe/Moscow",
+    "hourly_units": {
+      "temperature_2m": "°C"
+    },
+    "hourly": {
+      "time": ["0", "0", "0"],
+      "temperature_2m": [0, 0, 0]
+    },
+    "daily": {
+      "time": ['2022-07-01T09:00'],
+      "temperature_2m_max": [0],
+      "temperature_2m_min": [0],
+      "weathercode": [0],
+      "windspeed_10m_max": [0],
+      "windgusts_10m_max": [0],
+      "winddirection_10m_dominant": [0],
+      "precipitation_hours": [0],
+    }
+  }
 ]
 
 export default cities;

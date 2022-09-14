@@ -1,4 +1,10 @@
-.base {
+.wrapper {
+  background: rgb(250,232,218);
+  background: linear-gradient(180deg, rgba(250,232,218,1) 0%, rgba(254,255,214,1) 47%, rgba(129,234,234,1) 88%, rgba(145,236,255,1) 100%);
+}
+.container {
   max-width: 1200px;
-  margin: 200px auto 0 auto;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2%;
 }

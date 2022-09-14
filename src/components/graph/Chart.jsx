@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import cities from "../../mock/cities";
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,8 @@ ChartJS.register(
 function Chart(props) {
 
   const city=props.city;
+  const dayjs = require('dayjs');
+  const formatDate = city.hourly.time.map((item) => (dayjs(item).format('DD.MM HH:mm')));
 
   const options = {
     responsive: true,
@@ -33,18 +36,18 @@ function Chart(props) {
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: 'Weekly temperature chart',
       },
     },
   };
 
-  const labels = city.hourly.time;
+  const labels = formatDate;
 
   const data = {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'Temperature',
         data: city.hourly.temperature_2m,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -54,5 +57,9 @@ function Chart(props) {
 
   return <Line options={options} data={data} />;
 }
+
+Chart.defaultProps = {
+  city: cities[2]
+};
 
 export default Chart;
